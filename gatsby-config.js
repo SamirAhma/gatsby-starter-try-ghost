@@ -3,9 +3,9 @@ let ghostConfig
 let routesConfig
 
 try {
-    siteConfig = require(`./siteConfig`)
+    siteConfig = require(`./siteConfig`);
 } catch (e) {
-    siteConfig = null
+    siteConfig = null;
 }
 
 try {
@@ -26,12 +26,15 @@ try {
             apiUrl: process.env.GHOST_API_URL,
             contentApiKey: process.env.GHOST_CONTENT_API_KEY,
         },
-    }
+    };
 } finally {
-    const { apiUrl, contentApiKey } = process.env.NODE_ENV === `development` ? ghostConfig.development : ghostConfig.production
+    const { apiUrl, contentApiKey } =
+        process.env.NODE_ENV === `development`
+            ? ghostConfig.development
+            : ghostConfig.production;
 
     if (!apiUrl || !contentApiKey || contentApiKey.match(/<key>/)) {
-        ghostConfig = null //allow default config to take over
+        ghostConfig = null; //allow default config to take over
     }
 }
 
@@ -46,6 +49,13 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-plugin-disqus`,
+            options: {
+                shortname: `techandsec-com`,
+            },
+        },
+
+        {
             resolve: `gatsby-theme-ghost-dark-mode`,
             options: {
                 // Set to true if you want your theme to default to dark mode (default: false)
@@ -58,16 +68,29 @@ module.exports = {
                 overrideOS: false,
             },
         },
+        // {
+        //     resolve: "gatsby-plugin-ackee-tracker",
+        //     options: {
+        //         // Domatin ID found when adding a domain in the admin panel.
+        //         domainId: "YOUR_ACKEE_DOMAIN_ID",
+        //         // URL to Server eg: "https://analytics.test.com".
+        //         server: "https://analytics.test.com",
+        //         // Disabled analytic tracking when running localy
+        //         ignoreLocalhost: true,
+        //         // If enabled it will collect info on OS, BrowserInfo, Device  & ScreenSize
+        //         detailed: false,
+        //     },
+        // },
         {
             resolve: `gatsby-theme-ghost-members`,
         },
         {
             resolve: `gatsby-transformer-rehype`,
             options: {
-                filter: node => (
-                    node.internal.type === `GhostPost` ||
-                    node.internal.type === `GhostPage`
-                ) && node.slug !== `data-schema`,
+                filter: (node) =>
+                    (node.internal.type === `GhostPost` ||
+                        node.internal.type === `GhostPage`) &&
+                    node.slug !== `data-schema`,
                 plugins: [
                     {
                         resolve: `gatsby-rehype-ghost-links`,
@@ -79,4 +102,4 @@ module.exports = {
             },
         },
     ],
-}
+};

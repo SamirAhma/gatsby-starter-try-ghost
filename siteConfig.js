@@ -1,16 +1,16 @@
 module.exports = {
     // Do not include a trailing slash!
-    siteUrl: `https://demo.jamify.org`,
+    siteUrl: `https://techandsec.com`,
 
     // Maximum number of post shown per page
     // With Infinite Scroll this is the chunk of posts fetched when scrolling down
     postsPerPage: 3,
 
     // This allows an alternative site title for meta data for pages.
-    siteTitleMeta: `Gatsby Starter Ghost CMS`,
+    siteTitleMeta: `My learning and thoughts about technology and cyber security`,
 
     // This allows an site description for meta data for pages.
-    siteDescriptionMeta: `Turn your Ghost blog into a flaring fast static site with Gatsby`,
+    siteDescriptionMeta: `My learning and thoughts about technology and cyber security`,
 
     // Change to the width and height of your default share image
     shareImageWidth: 1000,
