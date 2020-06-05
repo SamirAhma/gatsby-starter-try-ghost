@@ -4,17 +4,17 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
-import { resolveUrl } from '../utils/routing'
-import useOptions from '../utils/use-options'
-import { useLang, get } from '../utils/use-lang'
+import { resolveUrl } from 'gatsby-theme-try-ghost/src/utils/routing'
+import useOptions from 'gatsby-theme-try-ghost/src/utils/use-options'
+import { useLang, get } from 'gatsby-theme-try-ghost/src/utils/use-lang'
 
-import { Layout, HeaderPost, AuthorList, PreviewPosts, ImgSharp } from '../components/common'
-import { Comments, TableOfContents, Subscribe } from '../components/common'
+import { Layout, HeaderPost, AuthorList, PreviewPosts, ImgSharp } from 'gatsby-theme-try-ghost/src/components/common'
+import { Comments, TableOfContents, Subscribe } from 'gatsby-theme-try-ghost/src/components/common'
 
-import { StickyNavContainer, OverlayContainer } from '../components/common/effects'
-import { MetaData } from '../components/common/meta'
+import { StickyNavContainer, OverlayContainer } from 'gatsby-theme-try-ghost/src/components/common/effects'
+import { MetaData } from 'gatsby-theme-try-ghost/src/components/common/meta'
 
-import { PostClass } from '../components/common/helpers'
+import { PostClass } from 'gatsby-theme-try-ghost/src/components/common/helpers'
 
 /**
 * Single post view (/:slug)
